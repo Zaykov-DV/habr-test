@@ -1,0 +1,73 @@
+@mixin hideScrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+}
+
+@mixin text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin text-ellipsis-rows($n) {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+
+@mixin container {
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media("xl") {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+
+@mixin slimScrollbar {
+  &::-webkit-scrollbar {
+    width: 24px;
+    height: 18px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 10px solid rgba(0, 0, 0, 0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    height: 6px;
+    border: 10px solid rgba(0, 0, 0, 0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 17px;
+    background-color: rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}

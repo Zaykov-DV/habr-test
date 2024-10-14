@@ -1,0 +1,25 @@
+@import '../mixins/utility';
+
+.option-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+  &__avatar {
+    max-width: 40px;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  &__name {
+    @include text-ellipsis-rows(1);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__alias {
+    @include text-ellipsis-rows(1);
+  }
+}
